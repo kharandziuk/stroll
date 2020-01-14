@@ -2,6 +2,8 @@
 - python get-pip.py
 - pip install virtualenv
 - virtualenv -p $(which python3) ENV
+- source ENV/bin/activate
+- pip install -r requirements.txt
 - ./manage.py migrate
 - ./manage.py createsuperuser
 - ./manage.py runserver
