@@ -2,6 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Venue
+from . import models
 
-admin.site.register(Venue)
+admin.site.register(models.Venue)
+admin.site.register(models.VenueList)

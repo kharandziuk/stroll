@@ -27,3 +27,17 @@ class Venue(models.Model):
         blank=True,
         max_length=100,
     )
+
+
+class VenueList(models.Model):
+    slug = models.SlugField(primary_key=True)
+    title = models.CharField(
+        blank=True,
+        max_length=100,
+    )
+    venues = models.ManyToManyField("venues.Venue", related_name="lists")
+
+    def venues_url(self):
+        return reverse('venues-list-venues',kwargs={
+            'slug': self.slug
+        })

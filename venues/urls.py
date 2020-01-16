@@ -11,6 +11,15 @@ urlpatterns = [
         views.VenueViewSet.as_view(dict(get='list', post='create')),
         name='venues'
     ),
+    path('lists',
+        views.VenuesListViewSet.as_view(dict(get='list', post='create')),
+        name='venues'
+    ),
+    path(
+        'lists/<slug:slug>/venues',
+        views.VenueListVenuesForwardView.as_view(),
+        name='venues-list-venues'
+    )
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)

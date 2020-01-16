@@ -15,3 +15,14 @@ class VenueSerializer(serializers.ModelSerializer):
             'other',
             'category',
         )
+
+
+class VenueListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.VenueList
+        fields = (
+            'slug',
+            'title',
+            'venues_url'
+        )
+
