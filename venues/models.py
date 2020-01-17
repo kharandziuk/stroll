@@ -28,6 +28,7 @@ class Venue(models.Model):
         blank=True,
         max_length=100,
     )
+    photo = models.FileField(upload_to="uploads/", blank=True)
 
 
 class VenueList(models.Model):
